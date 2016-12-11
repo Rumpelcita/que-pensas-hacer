@@ -51,8 +51,13 @@ tw-link.visited {
 }
 
 
+
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
-</script><tw-passagedata pid="1" name="start" tags="" position="642,326"># ¿Qué pensás hacer?
+
+
+</script><tw-passagedata pid="1" name="start" tags="" position="642,326">
+# ¿Qué pensás hacer?
 
 Florencia Rumpel Rodriguez
 
@@ -82,7 +87,7 @@ Esperabas comentarios terribles que por suerte no llegaron, solo te puso una car
 
 Pagás y [[volvés a casa-&gt;test]].
 (stop:)]</tw-passagedata>
-<tw-passagedata pid="4" name="test" tags="" position="646,754">Llegás a casa sin hacer ruido para no despertar a tu vieja y te encerrás en el baño. Agarrás la cajita del test y se te hace un nudo en la garganta.
+<tw-passagedata pid="4" name="test" tags="" position="646,755">Llegás a casa sin hacer ruido para no despertar a tu vieja y te encerrás en el baño. Agarrás la cajita del test y se te hace un nudo en la garganta.
 
 Pensaste en avisarle a tu novio, pero tenés miedo de que se saque como se sacó tu ex la última vez que te pasó esto. En ese momento estaban saliendo y lo primero que te dijo fue &quot;(text-style: &quot;shudder&quot;)[¿POR QUÉ ME HACÉS ESTO?]&quot;. Después te dejó de hablar.
 
@@ -140,7 +145,7 @@ Después de darle las noticias a tu novio, pensás(if: $amiga is false)[ en [[ha
 {
 (set: $novio to true)
 }</tw-passagedata>
-<tw-passagedata pid="9" name="contarle a una amiga" tags="" position="946,1139">Decidís mandarle un WhatsApp a tu amiga Lucía.
+<tw-passagedata pid="9" name="contarle a una amiga" tags="" position="945,1139">Decidís mandarle un WhatsApp a tu amiga Lucía.
 
 (live:2s)[Vos - Hola(stop:)]
 (live:3s)[Vos - Estoy embarazada(stop:)]
@@ -201,7 +206,7 @@ Tu vieja sigue ahí, dura como una piedra.
 
 Seguís bastante cansada porque te tuviste que levantar toda la noche para ir al baño. No tenés muchas ganas de hablar.
 
-Tu mamá te da un beso en la frente, te acaricia el pelo y te empieza a hablar, muy risueña, del bebé(link-replace:&quot;bebé&quot;)[feto].
+Tu mamá te da un beso en la frente, te acaricia el pelo y te empieza a hablar, muy risueña, del bebé(click-replace:&quot;bebé&quot;)[feto].
 
 Mamá - Hablé con tu papá y los vamos a ayudar con lo que necesiten. Estamos muy contentos de ser abuelos.
 Vos - Bueno, vemos.
@@ -235,7 +240,7 @@ Se va y cierra la puerta de tu pieza de un portazo. No tocas el desayuno porque 
 (live:9s)[Papá - No, no, de nada, yo no la pasé bien siendo padre tan joven. No quiero que pases por lo mismo(stop:)]
 
 (if: $amiga_bis is false)[Podrías [[leer los mensajes que te mandó tu amiga-&gt;mensajes_amiga]].](else:)[Llegaste a la facu, vas a cursar y [[volvés a casa-&gt;deberías tomar una decisión]].]\
-</tw-passagedata>
+(set:$viejo to true)\</tw-passagedata>
 <tw-passagedata pid="19" name="mensajes_amiga" tags="" position="798,2323">Te llegan varios mensajes de tu amiga Lucía.
 
 (live:2s)[Lucía - Hola(stop:)]
@@ -322,7 +327,7 @@ Querés a tu hijo y estás conforme con lo que hiciste, pero a veces te pregunt�
 <tw-passagedata pid="25" name="Esperar al parto y darlo en adopción" tags="" position="512,1503">Estuviste muy mal de salud durante los 9 meses de embarazo y te atrasaste un año con la carrera. A tu hijo lo adoptaron después de muchos años, pero trataste de mantenerte alejada del asunto porque te hacía mal. A pesar de eso, sentís que dentro de todo tuviste suerte.
 
 Terminaste tu carrera y estás conforme con lo que hiciste, pero a veces te preguntás qué habría pasado si hubieses tomado otra decisión(click:&quot;qué habría pasado si hubieses tomado otra decisión&quot;)[(reload:)].</tw-passagedata>
-<tw-passagedata pid="26" name="abortar con tu ginecóloga usando misoprostol" tags="" position="484.0001,1758">La ginecóloga te dio una receta de misoprostol. (if: $viejo)[Tu viejo lo fue a comprar.](else:)[Tuviste que dar vueltas por varias farmacias hasta que pudiste comprarlo.]
+<tw-passagedata pid="26" name="abortar con tu ginecóloga usando misoprostol" tags="" position="484,1758">La ginecóloga te dio una receta de misoprostol. (if: $viejo)[Tu viejo lo fue a comprar.](else:)[Tuviste que dar vueltas por varias farmacias hasta que pudiste comprarlo.]
 
 Realizaste el procedimiento en tu casa, cuando tu vieja estaba en el laburo. Tuviste sangrado por varios días, pero lo controlaste con la ginecóloga y salió todo bien. Sentís que dentro de todo tuviste suerte.
 
@@ -332,6 +337,8 @@ Terminaste tu carrera y estás conforme con lo que hiciste, pero a veces te preg
 Tuviste miedo hasta que viste que los médicos te trataban bien y estaban usando instrumentos estériles. Pudiste abortar tranquila y sentís que dentro de todo tuviste suerte.
 
 Terminaste tu carrera y estás conforme con lo que hiciste, pero a veces te preguntás qué habría pasado si hubieses tomado otra decisión(click:&quot;qué habría pasado si hubieses tomado otra decisión&quot;)[(reload:)].</tw-passagedata>
+<tw-passagedata pid="28" name="Header" tags="header" position="788,330">&lt;small&gt;{(if: (saved-games:) contains &quot;Slot A&quot;)[(link: &quot;· Cargar &quot;)[(load-game:&quot;Slot A&quot;)]]} {(link:&quot;· Guardar&quot;)[(if:(save-game:&quot;Slot A&quot;))[· Guardado](else: )[Error]]}&lt;/small&gt;
+&lt;hr&gt;</tw-passagedata>
 </tw-storydata>
 
 
