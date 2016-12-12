@@ -55,7 +55,9 @@ tw-link.visited {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -146,7 +148,7 @@ Vos - No, voy sola. Gracias igual.
 Novio - Te quiero.
 Vos - Yo también te quiero.
 
-Después de darle las noticias a tu novio, pensás(if: $amiga is false)[ en [[hablar con una amiga-&gt;contarle a una amiga]]] (if: $gineco is false)[ y en [[sacar turno con la ginecóloga-&gt;gineco]].](else:)[ que [[deberías tomar una decisión]].]\
+Después de darle las noticias a tu novio, pensás(if: $amiga is false)[ en [[hablar con una amiga-&gt;contarle a una amiga]]] (if: $gineco is false)[ y en [[sacar turno con la ginecóloga-&gt;gineco]].](else-if: (history:) contains &quot;deberías tomar una decisión&quot;)[que necesitás [[buscar más información-&gt;buscar]]](else:)[ que [[deberías tomar una decisión]].]\
 {
 (set: $novio to true)
 }</tw-passagedata>
@@ -233,7 +235,7 @@ Se va y cierra la puerta de tu pieza de un portazo. No tocas el desayuno porque 
 
 [[Te preparás para ir a cursar-&gt;cursar]].\
 (set: $aborto to true)</tw-passagedata>
-<tw-passagedata pid="17" name="cursar" tags="" position="947,2258">En el viaje a la facu revisás tu celular. Podés leer los [[mensajes que te mandó tu viejo-&gt;mensajes_viejo]].(if: $amiga is true)[También podés [[leer los mensajes de tu amiga-&gt;mensajes_amiga]].]</tw-passagedata>
+<tw-passagedata pid="17" name="cursar" tags="" position="947,2258">En el viaje a la facu revisás tu celular. Podés leer los [[mensajes que te mandó tu viejo-&gt;mensajes_viejo]].(if: $amiga is true)[ También podés [[leer los mensajes de tu amiga-&gt;mensajes_amiga]].]</tw-passagedata>
 <tw-passagedata pid="18" name="mensajes_viejo" tags="" position="707,2158">Te llegan varios mensajes de tu viejo.
 
 (live:2s)[Papá - Tu mamá me contó lo que pasó(stop:)]
