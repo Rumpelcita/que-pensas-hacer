@@ -56,7 +56,9 @@ tw-link.visited {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -142,9 +144,11 @@ Vos - No, no, pero ¿qué querés hacer?
 Novio - Y si querés podemos ser papás.
 Vos - Bueno, vemos.
 Novio - ¿Cómo qué vemos? Mirá que lo de ser papás lo digo en serio, no me pienso borrar.
+(if: $gineco is false)[\
 Vos - Todavía no es seguro, tengo que ir a la ginecóloga y esas cosas.
 Novio - Ah, bueno. Me asustaste de nuevo. ¿Querés que te acompañe?
-Vos - No, voy sola. Gracias igual.
+Vos - No, voy sola. Gracias igual.\
+](else:)[Vos - ...]
 Novio - Te quiero.
 Vos - Yo también te quiero.
 
@@ -247,7 +251,7 @@ Se va y cierra la puerta de tu pieza de un portazo. No tocas el desayuno porque 
 (live:8s)[Vos - Gracias(stop:)]
 (live:9s)[Papá - No, no, de nada, yo no la pasé bien siendo padre tan joven. No quiero que pases por lo mismo(stop:)]
 
-(if: $amiga_bis is false)[Podrías [[leer los mensajes que te mandó tu amiga-&gt;mensajes_amiga]].](else:)[Llegaste a la facu, vas a cursar y [[volvés a casa-&gt;deberías tomar una decisión]].]\
+(if: $amiga_bis is false and $amiga is true)[Podrías [[leer los mensajes que te mandó tu amiga-&gt;mensajes_amiga]].](else:)[Llegaste a la facu, vas a cursar y [[volvés a casa-&gt;deberías tomar una decisión]].]\
 (set:$viejo to true)</tw-passagedata>
 <tw-passagedata pid="19" name="mensajes_amiga" tags="" position="798,2323">Te llegan varios mensajes de tu amiga Lucía.
 
