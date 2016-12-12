@@ -57,7 +57,9 @@ tw-link.visited {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -152,7 +154,7 @@ Vos - No, voy sola. Gracias igual.\
 Novio - Te quiero.
 Vos - Yo también te quiero.
 
-Después de darle las noticias a tu novio, pensás(if: $amiga is false)[ en [[hablar con una amiga-&gt;contarle a una amiga]]] (if: $gineco is false)[ y en [[sacar turno con la ginecóloga-&gt;gineco]].](else-if: (history:) contains &quot;deberías tomar una decisión&quot;)[que necesitás [[buscar más información-&gt;buscar]]](else:)[ que [[deberías tomar una decisión]].]\
+Después de darle las noticias a tu novio, pensás(if: $amiga is false)[ en [[hablar con una amiga-&gt;contarle a una amiga]]] (if: $gineco is false)[(if: $amiga is false)[ y] en [[sacar turno con la ginecóloga-&gt;gineco]].](else-if: (history:) contains &quot;deberías tomar una decisión&quot;)[que necesitás [[buscar más información-&gt;buscar]]](else:)[ que [[deberías tomar una decisión]].]\
 {
 (set: $novio to true)
 }</tw-passagedata>
@@ -227,7 +229,7 @@ Mamá - Bueno. ¿Lo vas a dar en adopción entonces? Mirá que nosotros te ayuda
 [[Le podés decír que sí-&gt;adopción]]. También [[le podés decir que no-&gt;vemos]].</tw-passagedata>
 <tw-passagedata pid="15" name="adopción" tags="" position="947,2108">Le estás por decir que sí, pero recién terminaste tu primera tostada y ya tenés náuseas. Corrés la bandejita y vas al baño a vomitar. 
 
-Tu mamá te sigue y te explica que es normal, que a ella le pasó por los primeros 3 meses de embarazo. Solo llevás una semana de embarazo y ya estás cansada de no poder dormir tranquila y vómitar a cada rato. ¿Estás segura de que vas a aguantar 9 meses así para darlo en adopción?
+Tu mamá te sigue y te explica que es normal, que a ella le pasó por los primeros 3 meses de embarazo. Solo llevás una semana de embarazo y ya estás cansada de no poder dormir tranquila y vomitar a cada rato. ¿Estás segura de que vas a aguantar 9 meses así para darlo en adopción?
 
 [[Te preparás para ir a cursar-&gt;cursar]].</tw-passagedata>
 <tw-passagedata pid="16" name="vemos" tags="" position="1097,2108">Vos - No sé, yo por ahí pensaba en otra cosa.
