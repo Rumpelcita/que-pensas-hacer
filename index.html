@@ -54,7 +54,9 @@ tw-link.visited {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -121,6 +123,7 @@ Deberías juntar valor para [[contarle a tu novio]], también podrías [[contarl
 (set: $amiga_bis to false)
 (set: $viejo to false)
 (set: $gineco to false)
+(set: $aborto to false)
 }</tw-passagedata>
 <tw-passagedata pid="7" name="baño" tags="" position="647,1204">(set: $baño to it + 1)\
 Meás y [[volvés a dormir-&gt;dormir]].</tw-passagedata>
@@ -228,21 +231,22 @@ Mamá - Con esto no te vamos a ayudar, si querés abortar, arreglate sola.
 
 Se va y cierra la puerta de tu pieza de un portazo. No tocas el desayuno porque la discusión te sacó el hambre. 
 
-[[Te preparás para ir a cursar-&gt;cursar]].</tw-passagedata>
+[[Te preparás para ir a cursar-&gt;cursar]].\
+(set: $aborto to true)</tw-passagedata>
 <tw-passagedata pid="17" name="cursar" tags="" position="947,2258">En el viaje a la facu revisás tu celular. Podés leer los [[mensajes que te mandó tu viejo-&gt;mensajes_viejo]].(if: $amiga is true)[También podés [[leer los mensajes de tu amiga-&gt;mensajes_amiga]].]</tw-passagedata>
 <tw-passagedata pid="18" name="mensajes_viejo" tags="" position="707,2158">Te llegan varios mensajes de tu viejo.
 
 (live:2s)[Papá - Tu mamá me contó lo que pasó(stop:)]
 (live:3s)[Papá - Sé que no hablamos mucho(stop:)]
-(live:4s)[Papá - Pero si querés te cubro lo que salga eso que querés hacer(stop:)]
-(live:5s)[Vos - El aborto?(stop:)]
-(live:6s)[Papá - Sí, sí, eso(stop:)]
+(live:4s)[Papá - Pero si querés te cubro (if: $aborto is true)[lo que salga eso que querés hacer](else:)[lo que salga resolver el problema](stop:)]
+(live:5s)[Vos - (if: $aborto is true)[El aborto?](else:)[Cómo es eso?](stop:)]
+(live:6s)[Papá - (if: $aborto is true)[Sí, sí, eso](else:)[Te pago el aborto](stop:)]
 (live:7s)[Papá - Vos averiguá qué tenés que hacer y cuánto sale y yo lo pago(stop:)]
 (live:8s)[Vos - Gracias(stop:)]
 (live:9s)[Papá - No, no, de nada, yo no la pasé bien siendo padre tan joven. No quiero que pases por lo mismo(stop:)]
 
 (if: $amiga_bis is false)[Podrías [[leer los mensajes que te mandó tu amiga-&gt;mensajes_amiga]].](else:)[Llegaste a la facu, vas a cursar y [[volvés a casa-&gt;deberías tomar una decisión]].]\
-(set:$viejo to true)\</tw-passagedata>
+(set:$viejo to true)</tw-passagedata>
 <tw-passagedata pid="19" name="mensajes_amiga" tags="" position="798,2323">Te llegan varios mensajes de tu amiga Lucía.
 
 (live:2s)[Lucía - Hola(stop:)]
