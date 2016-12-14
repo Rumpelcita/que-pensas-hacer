@@ -58,7 +58,9 @@ tw-link.visited {
 
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 
@@ -195,7 +197,7 @@ Después de darle las noticias a tu novio, pensás(if: $amiga is false)[ en [[ha
 
 Después de hablar con Lucía, [[sacás turno con la ginecóloga-&gt;gineco]]. (if: $novio is false)[Tal vez deberías [[contarle a tu novio]].]\
 (set: $amiga to true)</tw-passagedata>
-<tw-passagedata pid="10" name="gineco" tags="" position="947,1356">Vas a la ginecóloga, te manda a hacerte un análisis de sangre que confirma que estás embarazada. La ginecóloga te pregunta qué pensás hacer y te dice que si querés *resolver el asunto*, podés llamar y pedir turno.
+<tw-passagedata pid="10" name="gineco" tags="" position="947,1356">Vas a la ginecóloga, te manda a hacerte un análisis de sangre que confirma que estás embarazada. La ginecóloga te pregunta qué pensás hacer y te dice que si querés *resolver el asunto*, podés llamar y pedir turno. Ella te puede recetar misoprostol, unas pastillas abortivas, que te permiten realizar el procedimiento en tu casa.
 
 [[Volvés a tu casa a cenar con tu mamá-&gt;cena_padres]].\
 (set: $gineco to true)
@@ -281,27 +283,30 @@ Podrías ir a la ginecóloga que se ofreció a recetarte misoprostol para aborta
 También podrías darlo en adopción o ser madre, pero querés terminar tu carrera y no sabés si vas a poder aguantar 9 meses en este estado de salud sin atrasarte o abandonar.
 
 [[Vas a buscar más información antes de decidir-&gt;buscar]].</tw-passagedata>
-<tw-passagedata pid="21" name="buscar" tags="" position="797,1505">Decidís investigar antes de tomar una decisión. (link-repeat: &quot;Buscar más datos:&quot;)[(set: $display to (random:1, 8))]
+<tw-passagedata pid="21" name="buscar" tags="" position="795,1505">{
+(set: $info to (a: 1,2,3,4,5,6,7,8))
+}\
+Decidís investigar antes de tomar una decisión. (live: 1s)[(if: $info&#39;s length &gt; 1)[(link-repeat: &quot;Buscar más datos:&quot;)[(set: $display to (either: ...$info))]]]
 (live:1s)[
-(if: $display is 1)[\
+(if: $display is 1)[(set: $info to it - (a: 1))\
 *Según cifras no oficiales, cerca de 80.000 mujeres son hospitalizadas anualmente por complicaciones derivadas de abortos inseguros y un centenar mueren por este motivo, que es la principal causa de mortalidad materna en Argentina.*
 
 (link-repeat:&quot;Fuente&quot;)[(open-url:&quot;http://internacional.elpais.com/internacional/2016/11/21/argentina/1479761391_434018.html&quot;)(replace: &quot;[object Window]&quot;)[]]
-](else-if: $display is 2)[\
+](else-if: $display is 2)[(set: $info to it - (a: 2))\
 *El Comité de Derechos Humanos de la ONU exhortó ayer al Estado argentino a revisar “el caso de Belén”, a la luz de los estándares internacionales en la materia, “con miras a su inmediata liberación”. El organismo, con sede en Ginebra, puso el foco en la situación de la joven de 27 años, presa desde hace más de dos años –tras sufrir un aborto espontáneo cuando fue a atenderse a un hospital público en Tucumán–, luego de examinar el informe periódico presentado por la Argentina.*
 
 (link-repeat:&quot;Fuente&quot;)[(open-url:&quot;https://www.pagina12.com.ar/diario/sociedad/3-304383-2016-07-16.html&quot;)(replace: &quot;[object Window]&quot;)[]]
-](else-if: $display is 3)[\
+](else-if: $display is 3)[(set: $info to it - (a: 3))\
 *En relación a la interrupción voluntaria del embarazo, el Comité de Derechos Humanos destacó el fallo de la Corte Suprema (caso F.A.L., 2012), que clarificó los alcances de los abortos no punibles. Pero al mismo tiempo expresó su preocupación por el hecho de que su aplicación “no es uniforme” en todo el país, y que “el aborto legal resulte, muchas veces, inaccesible por la falta de instrumentación de protocolos médicos, del ejercicio individual de objeción de conciencia por parte de los trabajadores de la salud u otros obstáculos de facto”.*
 
 (link-repeat:&quot;Fuente&quot;)[(open-url:&quot;https://www.pagina12.com.ar/diario/sociedad/3-304383-2016-07-16.html&quot;)(replace: &quot;[object Window]&quot;)[]]
-](else-if: $display is 4)[\
+](else-if: $display is 4)[(set: $info to it - (a: 4))\
 *A pesar de las restricciones legales, en Argentina se aborta el doble que en el resto de América, según un informe de Human Rights Watch publicado en 2010. La ONG afirma que cada año hay entre 400.000 y 600.000 interrupciones de embarazo.*
 
 (link-repeat:&quot;Fuente&quot;)[(open-url:&quot;http://sociedad.elpais.com/sociedad/2012/03/13/actualidad/1331644072_190589.html&quot;)(replace: &quot;[object Window]&quot;)[]]
-](else-if: $display is 5)[\
+](else-if: $display is 5)[(set: $info to it - (a: 5))\
 *En la línea «Aborto: más información, menos riesgos» algunas mujeres nos contaron que en algunas farmacias si la mujer no tiene receta le cobran el misoprostol mucho más caro: entre 20 y 50 pesos cada pastilla. También nos contaron que les han vendido otros medicamentos:
-&#39;Fui a la farmacia y me inyectaron duvadilan*&#39;
+&#39;Fui a la farmacia y me inyectaron duvadilan&#39;
 &#39;Me pasaron el teléfono de una partera que me inyectó
 oxitocina&#39;
 &#39;El chico de la farmacia me vendió unas pastillas, no me dijo
@@ -311,15 +316,15 @@ otra y cambiar de farmacia&#39;
 - Estos medicamentos no son abortivos. No pongas tu salud en peligro ni te dejes estafar o engañar.*
 
 (link-repeat:&quot;Fuente&quot;)[(open-url:&quot;http://despenalizacion.org.ar/pdf/publicaciones/Manual-abortoconpastillas.pdf&quot;)(replace: &quot;[object Window]&quot;)[]]
-](else-if: $display is 6)[\
+](else-if: $display is 6)[(set: $info to it - (a: 6))\
 *Hay unos 14 mil jóvenes sin cuidados parentales y alojados en hogares, de los cuales la mitad se encuentra en condiciones de adoptabilidad, según informes de la ONU*
 
 (link-repeat:&quot;Fuente&quot;)[(open-url:&quot;http://www.infobae.com/2013/06/15/715635-por-que-es-tan-dificil-adoptar-argentina/&quot;)(replace: &quot;[object Window]&quot;)[]]
-](else-if: $display is 7)[\
+](else-if: $display is 7)[(set: $info to it - (a: 7))\
 *En la Ciudad de Buenos Aires, donde el estándar de vida es más alto, el proceso de adopción puede demandar cinco o seis años*
 
 (link-repeat:&quot;Fuente&quot;)[(open-url:&quot;http://www.infobae.com/2013/06/15/715635-por-que-es-tan-dificil-adoptar-argentina/&quot;)(replace: &quot;[object Window]&quot;)[]]
-](else-if: $display is 8)[\
+](else-if: $display is 8)[(set: $info to it - (a: 8))\
 *Hay un poco de hipocresía en esa insistencia en que es lo mejor para el chico volver con su familia biológica sin importar cuánto tiempo se pierda, porque en muchos casos termina causando un perjuicio, porque ese chico termina en un instituto*
 
 (link-repeat:&quot;Fuente&quot;)[(open-url:&quot;http://www.infobae.com/2013/06/15/715635-por-que-es-tan-dificil-adoptar-argentina/&quot;)(replace: &quot;[object Window]&quot;)[]]
